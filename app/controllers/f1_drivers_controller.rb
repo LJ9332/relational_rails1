@@ -3,5 +3,7 @@ class F1DriversController < ApplicationController
     @f1_drivers = F1Driver.all
   end
 
-  def show; end
+  def show
+    @f1_driver = F1Driver.find(params[:id])
+  end
 end
