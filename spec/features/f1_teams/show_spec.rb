@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "F1 teams show page" do
   before(:each) do
-    @mercedes = F1Team.create!(name: "Mercedes", horsepower: 1000, slick_tires: true)
-    @haas = F1Team.create!(name: "Haas", horsepower: 1000, slick_tires: true)
+    @mercedes = F1Team.create!(name: "Mercedes", horsepower: 1001, slick_tires: true)
+    @haas = F1Team.create!(name: "Haas", horsepower: 1000, slick_tires: false)
   end
   
   

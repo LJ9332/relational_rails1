@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/f1_teams", to: "f1_teams#index"
+  get "/f1_teams/:id", to: "f1_teams#show"
 end
