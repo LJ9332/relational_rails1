@@ -14,7 +14,7 @@ RSpec.describe "F1 Drivers index page" do
     it "displays f1 driver name and attributes" do
       visit "/f1_drivers"
 
-      expect(page).to have_content("Luis Hamilton")
+      expect(page).to have_content(@luis.name)
       expect(page).to have_content(@luis.weight)
       expect(page).to have_content(@luis.world_champion)
       expect(page).to have_content(@kevin.name)
