@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get "/f1_teams", to: "f1_teams#index"
   get "/f1_teams/:id", to: "f1_teams#show"
+
+  get "/f1_drivers", to: "f1_driver#index" 
 end
