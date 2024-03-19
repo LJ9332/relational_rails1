@@ -248,6 +248,17 @@
           null
         ]
       },
+      "/Users/lj/relational_rails1/spec/models/f1_driver_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/lj/relational_rails1/app/models/f1_driver.rb": {
         "lines": [
           1,
@@ -279,8 +290,23 @@
           1,
           null
         ]
+      },
+      "/Users/lj/relational_rails1/app/controllers/f1_teams_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lj/relational_rails1/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1710817878
+    "timestamp": 1710819407
   }
 }
