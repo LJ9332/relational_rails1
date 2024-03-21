@@ -4,4 +4,6 @@ class F1Team < ApplicationRecord
   validates :name, presence: true
   validates :horsepower, presence: true
   #validates :slick_tires, presence: true
+
+  default_scope -> { order(created_at: :desc) }
 end

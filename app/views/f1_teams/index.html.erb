@@ -2,4 +2,5 @@
 
 <% @f1_teams.each do |team| %>
   <h3> <%= team.name %> </h3>
+  <p>(Created: <%= team.created_at.strftime("%Y-%m-%d at %H:%M") %>)</p>
 <% end %>
