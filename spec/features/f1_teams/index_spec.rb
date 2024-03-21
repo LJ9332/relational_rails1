@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "F1 teams index page" do
   before(:each) do
-    @mercedes = F1Team.create!(name: "Mercedes", horsepower: 1000, slick_tires: true)
-    @haas = F1Team.create!(name: "Haas", horsepower: 1000, slick_tires: true)
+    @mercedes = F1Team.create!(name: "Mercedes", horsepower: 1000, slick_tires: true, created_at: "2022-04-22")
+    @haas = F1Team.create!(name: "Haas", horsepower: 1000, slick_tires: true, created_at: "2023-09-13")
+    @red_bull =  F1Team.create!(name: "Red Bull", horsepower: 1002, slick_tires: true)
   end
   
   
@@ -13,6 +14,18 @@ RSpec.describe "F1 teams index page" do
 
       expect(page).to have_content(@mercedes.name)
       expect(page).to have_content(@haas.name)
+    end
+  end
+
+  describe 'User Story 6' do
+    it "displays name of f1 team and time it was created" do
+      visit "/f1_teams"
+
+      expect(page).to have_content(@mercedes.name)
+      expect(page).to have_content(@haas.name)
+
+      expect(page).to have_content("2022-04-22")
+      expect(page).to have_content("2023-09-13")
     end
   end
 end
