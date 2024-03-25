@@ -3,3 +3,4 @@
 <p> Maximum Output Horsepower: <%= @f1_team.horsepower %></p>
 <p> Slick Tires: <%= @f1_team.slick_tires %></p>
 <p> Number of Drivers: <%= @f1_driver_count %></p>
+<%= link_to 'F1 Team Drivers', "/f1_teams/#{@f1_team.id}/f1_drivers" %>
