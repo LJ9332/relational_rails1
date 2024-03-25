@@ -32,4 +32,14 @@ RSpec.describe "F1 teams show page" do
       expect(page).to have_content("Number of Drivers: 2")
     end
   end
+
+  describe 'User Story 10' do 
+    it "Displays link to f1 team drivers index" do
+      visit "f1_teams/#{@mercedes.id}"
+
+      expect(page).to have_link("F1 Team Drivers")
+      click_on "F1 Team Drivers"
+      expect(current_path).to eq("/f1_teams/#{@mercedes.id}/f1_drivers")
+    end
+  end
 end

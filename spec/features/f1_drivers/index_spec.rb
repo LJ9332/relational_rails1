@@ -23,7 +23,7 @@ RSpec.describe "F1 Drivers index page" do
     end
   end
 
-  describe 'User Story 7' do
+  describe 'User Story 8' do
     it "Displays link to f1 drivers index on all pages" do
       visit "/f1_teams"
 
@@ -41,7 +41,7 @@ RSpec.describe "F1 Drivers index page" do
     end
   end
 
-  describe 'User Story 8' do
+  describe 'User Story 9' do
     it "Displays link to f1 teams index on all pages" do
       visit "/f1_drivers"
 
