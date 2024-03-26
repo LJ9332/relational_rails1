@@ -48,6 +48,10 @@ RSpec.describe "F1 teams index page" do
       click_on "Submit"
 
       expect(current_path).to eq("/f1_teams")
+
+      expect(page).to have_content("Ferrari")
+      expect(page).to have_content("999")
+      expect(page).to have_content("true")
     end
   end
 end
