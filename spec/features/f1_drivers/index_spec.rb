@@ -58,4 +58,30 @@ RSpec.describe "F1 Drivers index page" do
       expect(current_path).to eq("/f1_teams")
     end
   end
+
+  describe 'User Story 13' do
+    it "Displays a link to create a F1 Driver" do
+      visit "/f1_drivers"
+
+      expect(page).to have_link("Create new F1 Driver")
+      click_on "Create new F1 Driver"
+      expect(current_path).to eq("/f1_teams/#{@mercedes.id}/f1_drivers/new")
+
+      expect(page).to have_field("Name")
+      expect(page).to have_field("Weight")
+      expect(page).to have_field("World Champion")
+
+      fill_in "Name", with: "Max Verstappen"
+      fill_in "Weight", with: "145"
+      fill_in "World Champion", with: true
+
+      expect(page).to have_button("Submit")
+      click_on "Submit"
+      expect(current_path).to eq("/f1_drivers")
+
+      expect(page).to have_content("Max Verstappen")
+      expect(page).to have_content("145")
+      expect(page).to have_content("true")
+    end
+  end
 end
