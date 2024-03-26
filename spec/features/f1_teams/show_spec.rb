@@ -45,11 +45,11 @@ RSpec.describe "F1 teams show page" do
 
   describe 'User Story 12' do
     it "Displays a link to update a F1 Team" do
-      visit "f1_teams/#{@mercedes.id}"
+      visit "/f1_teams/#{@mercedes.id}"
 
       expect(page).to have_link("Update F1 Team")
       click_on "Update F1 Team"
-      expect(current_path).to eq("f1_teams/#{@mercedes.id}/edit")
+      expect(current_path).to eq("/f1_teams/#{@mercedes.id}/edit")
 
       expect(page).to have_field("Name")
       expect(page).to have_field("Horsepower")
@@ -59,9 +59,9 @@ RSpec.describe "F1 teams show page" do
       fill_in "Horsepower", with: "999"
       fill_in "Slick Tires", with: false
       
-      expect(page).to have_button("Submit")
-      click_on "Submit"
-      expect(current_path).to eq("f1_teams/#{@mercedes.id}")
+      expect(page).to have_button("Update")
+      click_on "Update"
+      expect(current_path).to eq("/f1_teams/#{@mercedes.id}")
      
       expect(page).to have_content("McLaren")
       expect(page).to have_content("999")

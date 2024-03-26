@@ -1,0 +1,20 @@
+<h1>Update F1 Team</h1>
+
+
+
+<%= form_with url: "/f1_teams/#{@f1_team.id}", method: :patch, data: { turbo: false } do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :horsepower, "Horsepower" %>
+  <%= f.text_field :horsepower %><br>
+
+  <%= f.label :slick_tires, "Slick Tires" %>
+  <%= f.text_field :slick_tires %><br>
+
+  <%= f.submit "Update" %>
+<% end %>
+
+
+
+<form action="/f1_teams/#{@f1_team.id}">
