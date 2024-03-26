@@ -22,3 +22,22 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+f1_teams {
+	id int pk
+	name string
+	horsepower integer
+	slick_tires boolean
+	created_at datetime
+	updated_at datetime
+}
+
+f1_drivers {
+	id integer
+	f1_team_id int > f1_teams.id
+	name string
+	weight integer
+	world_champion boolean
+	created_at datetime
+	updated_at datetime
+}
