@@ -1,0 +1,14 @@
+<h1>Create a F1 Driver</h1>
+
+<%= form_with url: "/f1_teams/#{@f1_team.id}/f1_drivers", method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %></br>
+
+  <%= form.label :weight, "Weight" %>
+  <%= form.text_field :weight %></br>
+
+  <%= form.label :world_champion, "World Champion" %>
+  <%= form.text_field :world_champion %></br>
+
+  <%= form.submit "Submit" %>
+<% end %>
