@@ -28,4 +28,26 @@ RSpec.describe "F1 teams index page" do
       expect(page).to have_content("2023-09-13")
     end
   end
+
+  describe 'User Story 11' do
+    it "Displays a link to create a new F1 Team" do
+      visit "/f1_teams"
+
+      expect(page).to have_link("Create F1 Team")
+      click_on "Create F1 Team"
+      expect(current_path).to eq("/f1_teams/new")
+
+      expect(page).to have_field("Name")
+      expect(page).to have_field("Horsepower")
+      expect(page).to have_field("Slick Tires")
+
+      fill_in "Name", with: "Ferrari"
+      fill_in "Horsepower", with: "999"
+      fill_in "Slick Tires", with: true
+      expect(page).to have_button("Submit")
+      click_on "Submit"
+
+      expect(current_path).to eq("/f1_teams")
+    end
+  end
 end
