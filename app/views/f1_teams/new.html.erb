@@ -1,0 +1,14 @@
+<h1>Create a F1 Team</h1>
+
+<%= form_with url: "/f1_teams", method: :post, data: { turbo: false } do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %></br>
+
+  <%= form.label :description, "Horsepower: " %>
+  <%= form.text_field :description %></br>
+
+  <%= form.label :slick_tires, "Slick Tires" %>
+  <%= form.text_field :slick_tires %></br>
+
+  <%= form.submit "Submit" %>
+<% end %>
