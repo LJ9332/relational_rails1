@@ -9,5 +9,8 @@ class F1Team < ApplicationRecord
     order(created_at: :desc)
   end
   
+  def f1_driver_count
+    self.f1_drivers.count
+  end
   # default_scope -> { order(created_at: :desc) }
 end

@@ -5,8 +5,6 @@ class F1TeamsController < ApplicationController
 
   def show
     @f1_team = F1Team.find(params[:id])
-    @f1_driver_count = @f1_team.f1_drivers.count
-    #move to model
   end
   
   def new; end
@@ -23,9 +21,7 @@ class F1TeamsController < ApplicationController
     redirect_to "/f1_teams"
   end
   
-  
   def edit
-    #binding.pry
     @f1_team = F1Team.find(params[:id])
   end
   
