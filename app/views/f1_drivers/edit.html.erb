@@ -1,0 +1,15 @@
+<h1>Update F1 Driver</h1>
+
+
+<%= form_with url: "/f1_drivers/#{@f1_driver.id}", method: :patch, data: { turbo: false } do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :weight, "Weight" %>
+  <%= f.text_field :weight %></br>
+
+  <%= f.label :world_champion, "World Champion" %>
+  <%= f.text_field :world_champion %></br>
+
+  <%= f.submit "Update" %>
+<% end %>

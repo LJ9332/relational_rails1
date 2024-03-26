@@ -42,7 +42,7 @@ RSpec.describe "F1 Drivers show page" do
 
       expect(page).to have_button("Update")
       click_on "Update"
-      expect(current_path).to eq("f1_drivers/#{@luis.id}")
+      expect(current_path).to eq("/f1_drivers/#{@luis.id}")
 
       expect(page).to have_content("Max Verstappen")
       expect(page).to have_content("145")
