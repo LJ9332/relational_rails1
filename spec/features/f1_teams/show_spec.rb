@@ -42,4 +42,34 @@ RSpec.describe "F1 teams show page" do
       expect(current_path).to eq("/f1_teams/#{@mercedes.id}/f1_drivers")
     end
   end
+
+  describe 'User Story 12' do
+    it "Displays a link to update a F1 Team" do
+      visit "f1_teams/#{@mercedes.id}"
+
+      expect(page).to have_link("Update F1 Team")
+      click_on "Update F1 Team"
+      expect(current_path).to eq("f1_teams/#{@mercedes.id}/edit")
+
+      expect(page).to have_field("Name")
+      expect(page).to have_field("Horsepower")
+      expect(page).to have_field("Slick Tires")
+
+      fill_in "Name", with: "McLaren"
+      fill_in "Horsepower", with: "999"
+      fill_in "Slick Tires", with: false
+      
+      expect(page).to have_button("Submit")
+      click_on "Submit"
+      expect(current_path).to eq("f1_teams/#{@mercedes.id}")
+     
+      expect(page).to have_content("McLaren")
+      expect(page).to have_content("999")
+      expect(page).to have_content("false")
+
+      expect(page).to_not have_content("Mercedes")
+      expect(page).to_not have_content("1001")
+      expect(page).to_not have_content("true")
+    end
+  end
 end
