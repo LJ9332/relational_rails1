@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   get "/f1_teams/:f1_team_id/f1_drivers", to: "f1_team_drivers#index"
   get "/f1_teams/:f1_team_id/f1_drivers/new", to: "f1_team_drivers#new"
+  post "/f1_teams/:f1_team_id/f1_drivers", to: "f1_team_drivers#create"
 end
