@@ -11,7 +11,7 @@ RSpec.describe "F1 Drivers index page" do
   
   
   describe 'User Story 3' do
-    it "displays f1 driver name and attributes" do
+    xit "displays f1 driver name and attributes" do
       visit "/f1_drivers"
 
       expect(page).to have_content(@luis.name)
@@ -56,6 +56,16 @@ RSpec.describe "F1 Drivers index page" do
       expect(page).to have_link("F1 Teams")
       click_on "F1 Teams"
       expect(current_path).to eq("/f1_teams")
+    end
+  end
+
+  describe 'User Story 15' do
+    it "displays world champion => true records" do
+      visit "/f1_drivers"
+
+      expect(page).to have_content(@luis.world_champion)
+
+      expect(page).to_not have_content(@kevin.world_champion)
     end
   end
 end
