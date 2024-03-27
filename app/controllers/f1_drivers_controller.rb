@@ -1,6 +1,6 @@
 class F1DriversController < ApplicationController
   def index
-    @f1_drivers = F1Driver.all
+    @f1_drivers = F1Driver.world_champion
   end
 
   def show
